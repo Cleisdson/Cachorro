@@ -11,7 +11,6 @@ int main(){
     
 cout << "Nome do cachorro: ";
 getline(cin(std));
-//cin >> str;
 
 c.setNome(str);
 

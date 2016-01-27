@@ -108,5 +108,4 @@ void Cachorro::comer(int energia){
 
 
 
-
 }
