@@ -19,6 +19,8 @@ public:
 //    void comer();
 
     Cachorro(const string &nome, const string &raca, int idade);
+    Cachorro(const Cachorro &);     //CONSTRUTOR DE COPIA
+    
     string getNome();
     void setNome(const string &nome);
     string getRaca();
@@ -26,6 +28,7 @@ public:
     int getIdade();
     void setIdade(int idade);
 
+    
     void dados(const string &nome, const string &raca, int);
 	void mostrarDados()const;
 	void mostrarStatus()const;
@@ -41,6 +44,7 @@ private:
     int energia;
     int felicidade;
     int emocao;
+    static int ultimaDataVac;
 
 };
 

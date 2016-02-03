@@ -6,6 +6,8 @@
 
 using namespace std;
 
+int Cachorro::ultimaDataVac = 03022016;     //INICIAR VARIAVEL ESTATICA
+
 Cachorro::Cachorro(){
     this -> felicidade = 100;
     this -> energia = 100;
@@ -13,6 +15,17 @@ Cachorro::Cachorro(){
     this -> nome = "Rex";
 	this -> raca = "Vira-lata";
 	this -> idade = 0;
+}
+  
+//CONSTRUTOR DE COPIA
+  
+Cachorro::Cachorro(const Cachorro &cao){
+    felicidade = cao.felicidade;
+    energia = cao.energia;
+    emocao = cao.emocao;
+    nome = cao.nome;
+    raca = cao.raca;
+    idade = cao.idade;
 }
 
 void Cachorro::dados(const string &nome,const string &raca, int idade){
@@ -139,7 +152,7 @@ while(b != false){
     }
     }
 }
-
+/*
 void Cachorro::comer(){
 
     int op;
@@ -161,3 +174,4 @@ void Cachorro::comer(){
     }
 
 }
+*/
