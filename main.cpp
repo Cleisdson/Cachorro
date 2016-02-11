@@ -10,19 +10,55 @@ int main(int argc, char **argv){
 
 	Cachorro c;
     string nome, raca;
-    int idade, op;
+    int idade, energia, emocao, op;
     bool b = true;
 
     cout << "Digite o nome: ";
-    cin >> nome;
-    cout << "Digite a raca: ";
-    cin >> raca;
+    cin >> nome; 
     cout << "Digite a idade: ";
     cin >> idade;
+    
+    while(b != false){
+        
+        cout << "1 - Pitbull" << endl;
+        cout << "2 - Labrador" << endl;
+        cout << "3 - Vira-lata" << endl;
+        cout << "Escolha a raca: ";
+        cin >> op;    
+        
+        
+        switch(op){
+            case 1:
+                raca = "Pitbull";
+                energia = 1;
+                emocao = 5;
+                b = false;
+                break;
+            case 2:
+                raca = "Labrador";
+                energia = 2;
+                emocao = 8;
+                b = false;
+                break;
+            case 3:
+                raca = "Vira-lata";
+                energia = 3;
+                emocao = 10;
+                b = false;
+                break;
+            default:
+                cout << "Raca desconhecida." << endl;
+                break;
+        }
+    }
+
     c.setNome(nome);
     c.setRaca(raca);
     c.setIdade(idade);
+    c.setEnergia(energia);
+    c.setEmocao(emocao);
 
+    b = true;
 
 while(b != false){
 

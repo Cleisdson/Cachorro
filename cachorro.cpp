@@ -9,12 +9,13 @@ using namespace std;
 int Cachorro::ultimaDataVac = 03022016;     //INICIAR VARIAVEL ESTATICA
 
 Cachorro::Cachorro(){
-    this -> felicidade = 100;
-    this -> energia = 100;
-	this -> emocao = 100;
-    this -> nome = "Rex";
-	this -> raca = "Vira-lata";
+    this -> felicidade = 0;
+    this -> energia = 0;
+	this -> emocao = 0;
+    this -> nome = "";
+	this -> raca = "";
 	this -> idade = 0;
+    this -> saude = 100;
 }
   
 //CONSTRUTOR DE COPIA
@@ -28,7 +29,7 @@ Cachorro::Cachorro(const Cachorro &cao){
     idade = cao.idade;
 }
 
-void Cachorro::dados(const string &nome,const string &raca, int idade){
+void Cachorro::dadosCachorro(const string &nome,const string &raca, int idade){
 	this -> nome = nome;
 	this -> raca = raca;
 	this -> idade = idade;
@@ -43,9 +44,7 @@ void Cachorro::mostrarDados()const{
 }
 
 void Cachorro::mostrarStatus()const{
-    cout << "Felicidade: " << felicidade << endl;
-    cout << "Energia: " << energia << endl;
-    cout << "Emocao: " << emocao << endl;
+    cout << "Saude: " << saude << endl;
     system("pause");
 }
 
@@ -70,6 +69,20 @@ void Cachorro::setIdade(int idade){
     this -> idade = idade;
 }
 
+int Cachorro::getEnergia(){
+    return energia;
+}
+void Cachorro::setEnergia(int energia){
+    this -> energia = energia;
+}
+
+int Cachorro::getEmocao(){
+    return emocao;
+}
+void Cachorro::setEmocao(int emocao){
+    this -> emocao = emocao;
+}
+
 void Cachorro::dormir(){
     if(energia >= 50){
         system("cls");
@@ -92,7 +105,7 @@ void Cachorro::brincar(){
     system("cls");
 
 while(b != false){
-    if(energia <= 20){
+    if(saude <= 20){
         system("cls");
         cout << nome << " esta muito cansado para brincar." << endl;
         b = false;
@@ -118,19 +131,19 @@ while(b != false){
                     case 1:
                         system("cls");
                         cout << nome << " fez acao pular." << endl;
-                        energia = energia - 20;
+                        saude = saude - (energia * 10);
                         mostrarStatus();
                         break;
                     case 2:
                         system("cls");
                         cout << nome << " fez acao rolar." << endl;
-                        energia = energia - 10;
+                        saude = saude - (energia * 10);
                         mostrarStatus();
                         break;
                     case 3:
                         system("cls");
                         cout << nome << " fez acao deitar." << endl;
-                        energia = energia - 5;
+                        saude = saude - (energia * 5);
                         mostrarStatus();
                         break;
                     case 4:
@@ -141,7 +154,7 @@ while(b != false){
                     case 5:
                         system("cls");
                         cout << nome << " fez acao latir." << endl;
-                        energia = energia - 5;
+                        saude = saude - (energia * 5);
                         mostrarStatus();
                         break;
                     default:
@@ -152,7 +165,10 @@ while(b != false){
     }
     }
 }
-/*
+
+
+
+
 void Cachorro::comer(){
 
     int op;
@@ -162,11 +178,13 @@ void Cachorro::comer(){
     }
     else{
         cout << "O que " << nome << " vai comer?" << endl;
+        cout << "0 - encerrar";
         cout << "1 - racao";
         cout << "2 - carne";
-        cout << "3 - cebola";
-        cout << "4 - não dar comida";
-        
+        cout << "3 - frango";
+        cout << "4 - comida de cachorro";
+        cout << "5 - legumes";
+        cout << "6 - peixe";
         cin >> op;
 
 
@@ -174,4 +192,3 @@ void Cachorro::comer(){
     }
 
 }
-*/

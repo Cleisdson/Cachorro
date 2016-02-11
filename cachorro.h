@@ -27,9 +27,12 @@ public:
     void setRaca(const string &raca);
     int getIdade();
     void setIdade(int idade);
-
+    int getEnergia();
+    void setEnergia(int energia);
+    int getEmocao();
+    void setEmocao(int emocao);
     
-    void dados(const string &nome, const string &raca, int);
+    void dadosCachorro(const string &nome, const string &raca, int);
 	void mostrarDados()const;
 	void mostrarStatus()const;
 	void brincar();
@@ -44,6 +47,7 @@ private:
     int energia;
     int felicidade;
     int emocao;
+    int saude;
     static int ultimaDataVac;
 
 };
