@@ -165,9 +165,6 @@ while(b != false){
     }
 }
 
-
-
-
 void Cachorro::comer(){
 
     int op;
@@ -185,9 +182,27 @@ void Cachorro::comer(){
         cout << "5 - legumes";
         cout << "6 - peixe";
         cin >> op;
-
-
-
     }
-
 }
+
+//MÉTODO ESTÁTICO
+
+void Cachorro::adocDia(){
+    
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
