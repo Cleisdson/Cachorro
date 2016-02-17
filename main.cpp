@@ -70,6 +70,7 @@ while(b != false){
     cout << "2 - Ver dados" << endl;
     cout << "3 - Dormir" << endl;
     cout << "4 - Comer" << endl;
+    cout << "5 - Visitar veterinario" << endl;
     cout << "Digite sua opcao: ";
     cin >> op;
 
@@ -83,8 +84,16 @@ while(b != false){
     case 2:
         c.mostrarDados();
         break;
-    case 3:
-        c.dormir();
+ //   case 3:
+  //      c.dormir();
+ //       break;
+    case 4:
+        c.comer();
+        break;
+    case 5:
+        c.diaVacina();
+        c.mostrarStatus();
+//        cout << "Ultimo dia de que tomou vacina: " << ultimaDataVac << endl;
         break;
     default:
         cout << "Opcao invalida." << endl;

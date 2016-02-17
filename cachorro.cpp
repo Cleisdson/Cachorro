@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int Cachorro::ultimaDataVac = 03022016;     //INICIAR VARIAVEL ESTATICA
+int Cachorro::ultimaDataVac = 01022015;     //INICIAR VARIAVEL ESTATICA
 
 Cachorro::Cachorro(){
     this -> felicidade = 0;
@@ -44,6 +44,7 @@ void Cachorro::mostrarDados()const{
 
 void Cachorro::mostrarStatus()const{
     cout << "Saude: " << saude << endl;
+    cout << "Ultima Vacinacao: " << ultimaDataVac;
     system("pause");
 }
 
@@ -81,7 +82,7 @@ int Cachorro::getEmocao(){
 void Cachorro::setEmocao(int emocao){
     this -> emocao = emocao;
 }
-
+/*
 void Cachorro::dormir(){
     if(energia >= 50){
         system("cls");
@@ -95,7 +96,7 @@ void Cachorro::dormir(){
         system("pause");
     }
 }
-
+*/
 void Cachorro::brincar(){
 
     int op;
@@ -187,11 +188,43 @@ void Cachorro::comer(){
 
 //MÉTODO ESTÁTICO
 
-void Cachorro::adocDia(){
+void Cachorro::diaVacina(){
     
-    
-    
+    bool b = true;
+    int op = 0;
+  
+    while(b != false){
+        cout << nome << " precisa receber a vacina anual." << endl;
+        cout << "Deseja vacinar agora? 1 - sim 2 - nao" << endl;
+        cin >> op;
+        
+        switch(op){
+            case 1:
+                ultimaDataVac = 01022016;
+                b = false;
+            case 2:
+                cout << "Tudo bem, voce quem sabe." << endl;
+                b = false;
+            default:
+                cout << "Opcao desconhecida." << endl;
+ 
+        }
+      /*  
+        if(op == 1){
+             //           mostrarStatus();
+ //           cout << "Ultimo dia de que tomou vacina: " << ultimaDataVac << endl;
+        }
+        else if(op == 2){
+            
+ //           mostrarStatus();
+ //           cout << "Ultimo dia de que tomou vacina: " << ultimaDataVac << endl;
+        }
+        else
+    */
+    }
 }
+
+//}
 
 
 

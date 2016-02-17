@@ -35,8 +35,9 @@ public:
 	void mostrarDados()const;
 	void mostrarStatus()const;
 	void brincar();
-    void dormir();
+//    void dormir();
     void comer();
+    void diaVacina();
 
 private:
 
