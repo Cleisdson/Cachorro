@@ -17,38 +17,40 @@ public:
 
 //    void comer();
 
-    Cachorro(const string &nome, const string &raca, int idade);
+    Cachorro(int idade, int energia, double emocao, int saude);
     Cachorro(const Cachorro &);     //CONSTRUTOR DE COPIA
     
-    string getNome();
+ /*   string getNome();
     void setNome(const string &nome);
+    int getId();
+    void setId(int id);
     string getRaca();
     void setRaca(const string &raca);
-    int getIdade();
+*/    int getIdade();
     void setIdade(int idade);
     int getEnergia();
     void setEnergia(int energia);
     int getEmocao();
     void setEmocao(int emocao);
     
-    void dadosCachorro(const string &nome, const string &raca, int);
-	void mostrarDados()const;
+ //   void dadosCachorro(const string &nome, const string &raca, int);
 	void mostrarStatus()const;
 	void brincar();
 //    void dormir();
     void comer();
-    void diaVacina();
+    static void dadosCachorro(/*const string &nome, const string &raca, int*/);
 
 private:
 
-    string nome;
-	string raca;
+    static string nomeCachorro;
+    static string nomeTreinador;
+    static string raca;
+    static int ultimaDataVac;
 	int idade;
     int energia;
-    int felicidade;
-    int emocao;
+    double emocao;
     int saude;
-    static int ultimaDataVac;
+ 
 
 };
 
