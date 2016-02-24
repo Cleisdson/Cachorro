@@ -1,102 +1,60 @@
 #include "cachorro.h"
-#include <iostream>
-#include <cstdlib>
-#include <string>
+#include "campeonato.h"
+#include "data.h"
+
+#include<iostream>
+#include<cstdlib>
+#include<string.h>
 
 using namespace std;
 
-string Cachorro::nomeTreinador = "Salsicha";
-string Cachorro::nomeCachorro = "Scooby";
-string Cachorro::raca = "vira-lata";
-int Cachorro::ultimaDataVac = 01022015;     //INICIAR VARIAVEL ESTATICA
-
 Cachorro::Cachorro(){
+
+    this -> nomeCachorro = "toto";
+    this -> idade = 1;
     this -> energia = 100;
-	this -> emocao = 5.0;
-	this -> idade = 0;
-    this -> saude = 100;
+    this -> estresse = 0;
+    this -> emailDono = "csmalcher";
+    this -> emailProvedor = "gmail";
+    this -> emailPais = "br";
 }
-  
-//CONSTRUTOR DE COPIA
-  
+
+Cachorro::~Cachorro(){
+}
+
 Cachorro::Cachorro(const Cachorro &cao){
-    energia = cao.energia;
-    emocao = cao.emocao;
+    nomeCachorro = cao.nomeCachorro;
     idade = cao.idade;
-    saude = cao.saude;
+    energia = cao.energia;
+    estresse = cao.estresse;
+    emailDono = cao.emailDono;
+    emailProvedor = cao.emailProvedor;
+    emailPais = cao.emailPais;
 }
-/*
-void Cachorro::dadosCachorro(const string &nome,const string &raca, int idade){
-	this -> nome = nome;
-	this -> raca = raca;
-	this -> idade = idade;
-}
-*/
-/*
-void Cachorro::mostrarDados()const{
-    system("cls");
-	cout << "Nome: " << nome << endl;
-	cout << "Raca: " << raca << endl;
-	cout << "Idade: " << idade << endl;
-    system("pause");
-}
-*/
+
+///////////////////////////////////////////////////////////////////////////////////
+
 void Cachorro::mostrarStatus()const{
-    cout << "Energia: " << energia << endl;
-    cout << "Emocao: " << emocao << endl;
+    cout << "Nome: " << nomeCachorro << endl;
     cout << "Idade: " << idade << endl;
-    cout << "Saude: " << saude << endl;
-    cout << "Ultima Vacinacao: " << ultimaDataVac << endl;
-    system("pause");
+    cout << "Energia: " << energia << endl;
+    cout << "Estresse: " << estresse << endl;
 }
 
-int Cachorro::getIdade(){
-    return idade;
-}
-void Cachorro::setIdade(int idade){
-    this -> idade = idade;
-}
+///////////////////////////////////////////////////////////////////////////////////
 
-int Cachorro::getEnergia(){
-    return energia;
-}
-void Cachorro::setEnergia(int energia){
-    this -> energia = energia;
-}
-
-int Cachorro::getEmocao(){
-    return emocao;
-}
-void Cachorro::setEmocao(int emocao){
-    this -> emocao = emocao;
-}
-/*
-void Cachorro::dormir(){
-    if(energia >= 50){
-        system("cls");
-        cout << nome << " esta muito agitado, brinque com ele." << endl;
-        system("pause");
-    }
-    else{
-        system("cls");
-        cout << nome << " vai dormir." << endl;
-        energia = 100;
-        system("pause");
-    }
-}
-*/
 void Cachorro::brincar(){
 
     int op;
-    bool b = true;
+    bool flag = true;
 
     system("cls");
 
-while(b != false){
-    if(saude <= 20){
+while(flag != false){
+    if(energia <= 20){
         system("cls");
         cout << nomeCachorro << " esta muito cansado para brincar." << endl;
-        b = false;
+        flag = false;
         system("pause");
     }
     else{
@@ -114,24 +72,24 @@ while(b != false){
 
                 switch(op){
                     case 0:
-                        b = false;
+                        flag = false;
                         break;
                     case 1:
                         system("cls");
                         cout << nomeCachorro << " fez acao pular." << endl;
-                        saude = saude - (energia * 10);
+                        energia = energia - 20;
                         mostrarStatus();
                         break;
                     case 2:
                         system("cls");
                         cout << nomeCachorro << " fez acao rolar." << endl;
-                        saude = saude - (energia * 10);
+                        energia = energia - 20;
                         mostrarStatus();
                         break;
                     case 3:
                         system("cls");
                         cout << nomeCachorro << " fez acao deitar." << endl;
-                        saude = saude - (energia * 5);
+                        energia = energia - 20;
                         mostrarStatus();
                         break;
                     case 4:
@@ -142,7 +100,7 @@ while(b != false){
                     case 5:
                         system("cls");
                         cout << nomeCachorro << " fez acao latir." << endl;
-                        saude = saude - (energia * 5);
+                        energia = energia - 20;
                         mostrarStatus();
                         break;
                     default:
@@ -154,126 +112,99 @@ while(b != false){
     }
 }
 
-void Cachorro::comer(){
+///////////////////////////////////////////////////////////////////////////////////
 
-    int op;
-
-    if(energia >= 100){
-        cout << nomeCachorro << " esta cheio." << endl;
+void Cachorro::dormir(){
+    if(energia >= 50){
+        system("cls");
+        cout << nomeCachorro << " esta muito agitado, brinque com ele." << endl;
+        system("pause");
     }
     else{
-        cout << "O que " << nomeCachorro << " vai comer?" << endl;
-        cout << "0 - encerrar";
-        cout << "1 - racao";
-        cout << "2 - carne";
-        cout << "3 - frango";
-        cout << "4 - comida de cachorro";
-        cout << "5 - legumes";
-        cout << "6 - peixe";
-        cin >> op;
+        system("cls");
+        cout << nomeCachorro << " vai dormir." << endl;
+        energia = 100;
+        system("pause");
     }
 }
 
-//MÉTODO ESTÁTICO
+///////////////////////////////////////////////////////////////////////////////////
 
-void Cachorro::dadosCachorro(){
-    
-    string nomeT, nomeC, r;
-    bool b = true;
+int Cachorro::competir(int esforco){
+
+    energia -= esforco;
+    estresse += 30;
+
+}
+
+///////////////////////////////////////////////////////////////////////////////////
+
+int Cachorro::mostrarEnergia(){
+    return energia;
+}
+
+///////////////////////////////////////////////////////////////////////////////////
+
+void Cachorro::mudarDadosCachorro(){
+
     int op;
-    
-    while(b != false){
-    
-        cout << "0 - Voltar ao menu." << endl;
-        cout << "1 - Ver dados do cachorro." << endl;
-        cout << "2 - Mudar nome do cachorro." << endl;
-        cout << "3 - Mudar nome do treinador." << endl; 
-        cout << "4 - Mudar raca do cachorro." << endl;
-        cout << "O que deseja fazer?" << endl;
+    bool flag = true;
+
+    while(flag != false){
+        cout << "0 - Encerrar" << endl;
+        cout << "1 - Mudar nome" << endl;
+        cout << "2 - Mudar raca" << endl;
         cin >> op;
-        
+
         switch(op){
-            case 0:
-                b = false;
-                break;
-            case 1:
-                cout << "Nome do cachorro: " << nomeCachorro << endl;
-                cout << "Raca do cachorro: " << raca << endl;
-                cout << "Nome do treinador: " << nomeTreinador << endl;
-                break;
-            case 2:
-                cout << "Novo nome do treinador: ";
-                cin >> nomeT;
-                nomeTreinador = nomeT;
-                break;
-            case 3:
-                cout << "Novo nome do cachorro: ";
-                cin >> nomeC;
-                nomeCachorro = nomeC;
-                break;
-            case 4:
-                cout << "Nova raca: ";
-                cin >> r;
-                raca = r;
-                break;
-            default:
-                cout << "Opcao desconhecida." << endl;
+        case 0:
+            flag = false;
+            break;
+        case 1:
+            cout << "Digite o novo nome do cachorro: ";
+            cin >> nomeCachorro;
+            break;
+        case 2:
+            cout << "Digite a nova raca do cachorro: ";
+            cin >> racaCachorro;
+            break;
+        default:
+            cout << "Opcao desconhecida" << endl;
         }
     }
 }
 
 
 
-/*
-void Cachorro::diaVacina(){
+
+
+
+ostream &operator<<( ostream &output, const Cachorro &dog){
     
-    bool b = true;
-    int op = 0;
-  
-    while(b != false){
-        cout << nome << " precisa receber a vacina anual." << endl;
-        cout << "Deseja vacinar agora? 1 - sim 2 - nao" << endl;
-        cin >> op;
-        
-        switch(op){
-            case 1:
-                ultimaDataVac = 01022016;
-                b = false;
-            case 2:
-                cout << "Tudo bem, voce quem sabe." << endl;
-                b = false;
-            default:
-                cout << "Opcao desconhecida." << endl;
- 
-        }
-*/  
-    /*  
-        if(op == 1){
-             //           mostrarStatus();
- //           cout << "Ultimo dia de que tomou vacina: " << ultimaDataVac << endl;
-        }
-        else if(op == 2){
-            
- //           mostrarStatus();
- //           cout << "Ultimo dia de que tomou vacina: " << ultimaDataVac << endl;
-        }
-        else
-    */
-//    }
-//}
-
-//}
+    output << dog.emailDono << "@" << dog.emailProvedor << "." << dog.emailPais;
+    return output;
+    
+}
 
 
 
+istream &operator>>( istream &input, Cachorro &dog){
+    
+    input >> setw(9) >> dog.emailDono;
+    input.ignore();     //PULA @
+    input >> setw(5) >> dog.emailProvedor;
+    input.ignore();     //PULA .
+    input >> setw(2) >> dog.emailPais;
+    return input;
+    
+}
 
 
 
+Cachorro hound;
 
+cout << "Email do dono: ";
+cin >> hound;
 
-
-
-
-
-
-
+cout << endl << "Email digitado: ";
+cout << hound << endl;

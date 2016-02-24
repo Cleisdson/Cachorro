@@ -1,58 +1,51 @@
-#include <cstdlib>
-#include <iostream>
-#include <string>
-
 #include "cachorro.h"
+#include "campeonato.h"
+#include "data.h"
 
+#include <iostream>
 
 using namespace std;
 
 int main(int argc, char **argv){
 
-	Cachorro c;
+    Cachorro c;
+    Data d;
+
     int op;
-    bool b = true;
+    bool flag = true;
 
-while(b != false){
-
-    system("cls");
+while(flag != false){
 
     cout << "0 - Encerrar" << endl;
-    cout << "1 - Brincar" << endl;
-    cout << "2 - Ver dados" << endl;
+    cout << "1 - Mostrar status" << endl;
+    cout << "2 - Brincar" << endl;
     cout << "3 - Dormir" << endl;
-    cout << "4 - Comer" << endl;
-    cout << "5 - Visitar veterinario / status atual" << endl;
-    cout << "Digite sua opcao: ";
+    cout << "4 - Mudar dados cachorro" << endl;
+    cout << "5 - Ver tempo de jogo" << endl;
     cin >> op;
 
     switch(op){
     case 0:
-        b = false;
+        flag = true;
         break;
     case 1:
-        c.brincar();
+        c.mostrarStatus();
         break;
     case 2:
-        c.dadosCachorro();
+        c.brincar();
         break;
- //   case 3:
-  //      c.dormir();
- //       break;
+    case 3:
+        c.dormir();
+        break;
     case 4:
-        c.comer();
+        c.mudarDadosCachorro();
         break;
     case 5:
-        c.mostrarStatus();
-//        cout << "Ultimo dia de que tomou vacina: " << ultimaDataVac << endl;
-        break;
+        d.tempoTotal(double, double);
     default:
-        cout << "Opcao invalida." << endl;
+        cout << "Opcao desconhecida" << endl;
     }
 }
-//    c.brincar();
 
-//	c.mostrarDados();
-
-	return 0;
+return 0;
 }

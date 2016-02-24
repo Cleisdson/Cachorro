@@ -1,57 +1,51 @@
 #ifndef CACHORRO_H
 #define CACHORRO_H
 
-#include <iostream>
-#include <string>
+#include"campeonato.h"
+
+#include<iostream>
+#include<string.h>
 
 using namespace std;
 
 class Cachorro{
 
 public:
+    Cachorro();     //CONSTRUTOR
+    Cachorro(int idade, int energia, int estresse, const string &emailDono, const string &emailProvedor, const string &emailPais);     //CONSTRUTOR
+    ~Cachorro();
+    Cachorro(const Cachorro &);     //CONSTRUTOR DE CÓPIA
 
-    Cachorro();		//CONSTRUTOR
-//	~Cachorro();	//DESTRUTOR
-    //MÉTODOS
-//    void dormir();
-
-//    void comer();
-
-    Cachorro(int idade, int energia, double emocao, int saude);
-    Cachorro(const Cachorro &);     //CONSTRUTOR DE COPIA
+    void mostrarStatus() const;
+    void brincar();
+    void dormir();
+    int competir(int);
+    int mostrarEnergia();
     
- /*   string getNome();
-    void setNome(const string &nome);
-    int getId();
-    void setId(int id);
-    string getRaca();
-    void setRaca(const string &raca);
-*/    int getIdade();
-    void setIdade(int idade);
-    int getEnergia();
-    void setEnergia(int energia);
-    int getEmocao();
-    void setEmocao(int emocao);
     
- //   void dadosCachorro(const string &nome, const string &raca, int);
-	void mostrarStatus()const;
-	void brincar();
-//    void dormir();
-    void comer();
-    static void dadosCachorro(/*const string &nome, const string &raca, int*/);
+    
+    //SOBRECARGA DE OPERADORES
+    
+    friend ostream &operator<<( ostream &, const Cachorro &);
+    friend istream &operator>>( istream &, Cachorro &);
+    
+    
+    
+    
+    
+    static void mudarDadosCachorro();    //MÉTODO ESTÁTICO
 
 private:
-
     static string nomeCachorro;
-    static string nomeTreinador;
-    static string raca;
-    static int ultimaDataVac;
-	int idade;
+    static string racaCachorro;
+    static int dataUltVacina;
+    string emailDono;
+    string emailProvedor;
+    string emailPais;
+    int idade;
     int energia;
-    double emocao;
-    int saude;
- 
+    int estresse;
 
 };
 
-#endif
+#endif // CACHORRO_H
