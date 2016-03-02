@@ -94,5 +94,9 @@
     <File Name="main.cpp"/>
     <File Name="cachorro.cpp"/>
     <File Name="cachorro.h"/>
+    <File Name="campeonato.cpp"/>
+    <File Name="campeonato.h"/>
+    <File Name="data.cpp"/>
+    <File Name="data.h"/>
   </VirtualDirectory>
 </CodeLite_Project>
