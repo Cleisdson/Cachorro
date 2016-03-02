@@ -1,51 +1,28 @@
 #ifndef CACHORRO_H
 #define CACHORRO_H
 
-#include"campeonato.h"
+#include"animal.h"
 
 #include<iostream>
 #include<string.h>
 
-using namespace std;
-
-class Cachorro{
-
+class Cachorro : public Animal{
+    
 public:
-    Cachorro();     //CONSTRUTOR
-    Cachorro(int idade, int energia, int estresse, const string &emailDono, const string &emailProvedor, const string &emailPais);     //CONSTRUTOR
+
+    Cachorro();
+    Cachorro(int faro, int amizade);
     ~Cachorro();
-    Cachorro(const Cachorro &);     //CONSTRUTOR DE CÓPIA
-
-    void mostrarStatus() const;
-    void brincar();
-    void dormir();
-    int competir(int);
-    int mostrarEnergia();
+    Cachorro(const Cachorro &);
     
+    void passeio();
+    void adestramento();
     
-    
-    //SOBRECARGA DE OPERADORES
-    
-    friend ostream &operator<<( ostream &, const Cachorro &);
-    friend istream &operator>>( istream &, Cachorro &);
-    
-    
-    
-    
-    
-    static void mudarDadosCachorro();    //MÉTODO ESTÁTICO
-
 private:
-    static string nomeCachorro;
-    static string racaCachorro;
-    static int dataUltVacina;
-    string emailDono;
-    string emailProvedor;
-    string emailPais;
-    int idade;
-    int energia;
-    int estresse;
+    
+    int faro;
+    int amizade;
+    
+}
 
-};
-
-#endif // CACHORRO_H
+#endif //CACHORRO_H

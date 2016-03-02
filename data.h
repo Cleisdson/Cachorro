@@ -1,29 +1,31 @@
 #ifndef DATA_H
 #define DATA_H
 
-#include<iostream>
-#include<windows.h>
+#include <iostream>
+#include <string.h>
+
+using namespace std;
 
 class Data{
-
+    
 public:
+
     Data();
     Data(int dia, int mes, int ano, double inicio);
     ~Data();
-    Data(const Data&);
-
-    double tempoTotal(double, double);     //TEMPO TOTAL DESDE O INICIO DO PROGRAMA
-//    int dataAtual(int, int, int);   //DATA ATUAL
-//    int horaAtual(int,int, int);    //HORA ATUAL
+    Data(const Data &);
+    
+    double tempoTotal();
 
 private:
-
-    double inicio;  //INICIO DO PROGRAMA
-    double fim;     //TEMPO ATUAL DO PROGRAMA
 
     int dia;
     int mes;
     int ano;
-};
+    double inicio;  //INICIO DA EXECUÇÃO
+    double fim;     //TEMPO DE EXECUÇÃO ATUAL
+    
+}
 
-#endif
+
+#endif //DATA_H
