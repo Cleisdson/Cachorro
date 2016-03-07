@@ -4,7 +4,7 @@
 #include"animal.h"
 
 #include<iostream>
-#include<string.h>
+#include<string>
 
 using namespace std;
 
@@ -24,6 +24,6 @@ private:
     int instinto;
     int vidas;
     
-}
+};
 
 #endif //GATO_H

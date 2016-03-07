@@ -1,7 +1,8 @@
+#include"gato.h"
 #include"animal.h"
 
 #include<iostream>
-#include<string.h>
+#include<string>
 
 using namespace std;
 
@@ -27,6 +28,7 @@ Gato::Gato(const Gato *bichano){
 void caca(){
     
     instinto += 1;
+    energia -= 10;  //HERANÇA ANIMAL
     
 }
 

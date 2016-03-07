@@ -4,7 +4,7 @@
 #include"animal.h"
 
 #include<iostream>
-#include<string.h>
+#include<string>
 
 class Cachorro : public Animal{
     
@@ -23,6 +23,6 @@ private:
     int faro;
     int amizade;
     
-}
+};
 
 #endif //CACHORRO_H

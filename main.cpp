@@ -1,4 +1,13 @@
-#include <stdio.h>
+#include"animal.h"
+#include"cachorro.h"
+#include"gato.h"
+#include"data.h"
+#include"filhote.h"
+
+#include<iostream>
+#include<string.h>
+
+using namespace std;
 
 int main(int argc, char **argv)
 {

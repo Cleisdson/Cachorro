@@ -9,6 +9,7 @@ Animal::Animal(){
 	this -> energia = 100;
 	this -> idade = 1;
 	this -> selvagem = 50;
+    this -> estresse = 50;
 	this -> nomeAnimal = "chiforinfola";
 	this -> tam = 1;
 }

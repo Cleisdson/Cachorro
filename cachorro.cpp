@@ -1,7 +1,8 @@
+#include"cachorro.h"
 #include"animal.h"
 
 #include<iostream>
-#include<string.h>
+#include<string>
 
 using namespace std;
 
@@ -22,14 +23,12 @@ Cachorro::Cachorro(const Cachorro &cao){
 ///////////////////////////////////////////////////////////////////////
 
 void Cachorro::passeio(){
-    
     amizade += 1;
-    
 }
 
 //////////////////////////////////////////////////////////////////
 
 void Cachorro::adestramento(){
-    faro += 1;          //MUDAR PARA SELVAGEM -= 1;
+    selvagem -= 1;          //HERANÇA DA CLASSE ANIMAL
 }
 

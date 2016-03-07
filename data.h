@@ -2,7 +2,7 @@
 #define DATA_H
 
 #include <iostream>
-#include <string.h>
+#include <string>
 
 using namespace std;
 
@@ -25,7 +25,6 @@ private:
     double inicio;  //INICIO DA EXECUÇÃO
     double fim;     //TEMPO DE EXECUÇÃO ATUAL
     
-}
-
+};
 
 #endif //DATA_H
