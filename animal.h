@@ -25,7 +25,7 @@ public:
     
 protected:
 	
-	double *tabelaPeso = new double[tam];
+	double *tabelaPeso;
 	
 	int tam;
 	int energia;
