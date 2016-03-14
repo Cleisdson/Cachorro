@@ -5,13 +5,14 @@
 
 using namespace std;
 
-Animal::Animal(){
+Animal::Animal(const string &nomeAnimal, int energia, int idade, int selvagem, int estresse, int tam, pontos){
+	this -> nomeAnimal = "chiforinfola";
 	this -> energia = 100;
 	this -> idade = 1;
 	this -> selvagem = 50;
     this -> estresse = 50;
-	this -> nomeAnimal = "chiforinfola";
 	this -> tam = 1;
+	this -> pontos = 0;
 }
 
 Animal::~Animal(){
@@ -19,16 +20,44 @@ Animal::~Animal(){
 }
 
 Animal::Animal(const Animal &bicho){
+	nomeAnimal = bicho.nomeAnimal;
 	energia = bicho.energia;
 	idade = bicho.idade;
 	selvagem = bicho.selvagem;
 	estresse = bicho.estresse;
-	nomeAnimal = bicho.nomeAnimal;
+	tam = bicho.tam;
+	pontos = bicho.pontos;
 }
 
 ///////////////////////////////////////////////////////////////
+// SOBRECARGA DE OPERADORES
 
-void domestica(){
+
+ostream &operator<<(ostream &output, const Animal &bicho){
+	output << "Nome do Animal: " << bicho.nomeAnimal << endl;
+	output << "Energia: " << bicho.energia << endl;
+	output << "Idade: " << bicho.idade << endl;
+	output << "Selvageria: " << bicho.selvagem << endl;
+	output << "Estresse: " << bicho.estresse << endl;
+	output << "Tamanho: " << bicho.tam << endl;
+	output << "Pontuacao: " << bicho.pontos << endl;
+	return output;
+	
+}
+
+const Animal& Animal::operator=(const Animal &bicho){
+	this -> nomeAnimal = bicho.nomeAnimal;
+	this -> energia = bicho.energia;
+	this -> idade = bicho.idade;
+	this -> selvagem = bicho.selvagem;
+	this -> estresse = bicho.estresse;
+	this -> tam = bicho.tam;
+	this -> pontos = bicho.pontos;
+	
+}
+
+///////////////////////////////////////////////////////////////
+void Animal::domestica(){
 	
 	selvagem -= 1;
 	
@@ -36,7 +65,7 @@ void domestica(){
 
 ////////////////////////////////////////////////////////////////
 
-void brinca(){
+void Animal::brinca(){
 	
 	int op;
 	bool flag = true;
@@ -107,7 +136,7 @@ void brinca(){
 
 ///////////////////////////////////////////////////////////////////////////////////////
 
-void Cachorro::dorme(){
+void Animal::dorme(){
     if(energia >= 50){
         system("cls");
         cout << nomeCachorro << " esta muito agitado, brinque com ele." << endl;
@@ -123,7 +152,7 @@ void Cachorro::dorme(){
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
-void Cachorro::mostraStatus()const{
+void Animal::mostraStatus()const{
     cout << "Nome: " << nomeCachorro << endl;
     cout << "Idade: " << idade << endl;
     cout << "Energia: " << energia << endl;

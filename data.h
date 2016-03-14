@@ -7,6 +7,8 @@
 using namespace std;
 
 class Data{
+
+	friend ostream & operator<<(ostream &, const Data &);
     
 public:
 

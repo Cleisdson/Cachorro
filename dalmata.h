@@ -7,21 +7,24 @@
 #include<string>
 
 class Dalmata : public Cachorro{
-    
+		
+	friend ostream & operator<<(ostream &, const Dalmata &);
+	
 public:
 
     Dalmata();
-    Dalmata(int saude, int tam, bool doente);
+    Dalmata(int tam, bool doente);
     ~Dalmata();
     Dalmata(const Dalmata &);
     
+	
     void aloca();
     void idadeMais();
-//    void checkup();
+	void saude();
+    void checkup();
     
 protected:
 
-    int saude;
     int tam;
     bool doente;
     

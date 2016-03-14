@@ -8,8 +8,7 @@ using namespace std;
 
 Dalmata::Dalmata(){
     
-    this -> saude = 100;
-    this -> tam = 1;
+	this -> tam = 1;
     this -> doente = false;
     
 }
@@ -19,7 +18,6 @@ Dalmata::~Dalmata(){
 }
 
 Dalmata::Dalmata(const Dalmata &dal){
-    saude = dal.saude;
     tam = dal.tam;
     doente = dal.doente;
 }
@@ -29,7 +27,7 @@ Dalmata::Dalmata(const Dalmata &dal){
 void Dalmata::aloca(int tam){
     
     chanceDoenca = new int[tam];
-    chanceDoenca[tam] = 0.1;
+    chanceDoenca[tam] = 1;
 }
 
 ////////////////////////////////////////////////////////////////////
@@ -51,15 +49,37 @@ void Dalmata::idadeMais(){
         for(int i = 0; i < tam-1; i++)
             chanceDoenca[i] = aux[i];
         
-    percentDoenca += 0.1;
+    percentDoenca += 1;
     
 	chanceDoenca[tam-1] = percentDoenca;
 	
 	delete [] aux;
 	
 }
-/*
-void Dalmata::checkup(){
-    if(saude <= 20)
+
+void Dalmata::saude(){
+	if( energia <= chanceDoenca[idade])
+		doente = true;
 }
-*/
+
+void Dalmata::checkup(){
+	if(doente == true){
+		pontos -+ 1;
+		cout << nomeAnimal << " esta doente." << endl;
+	}
+	else{
+		pontos += 1;
+		cout << nomeAnimal << " esta bem." << endl;
+	}
+}
+
+ostream & operator<<(ostream &output, const Dalmata &aviso){
+	
+	output << "Seu cachorro esta sendo examinado, aguarde." << aviso.checkup();
+	return output;
+}
+
+const Dalmata & Dalmata::operator=(const Dalmata &dal){
+	static_cast<Animal> (*this) = static_cast<Animal> (dal);
+	this -> pontos = dal.pontos;
+}

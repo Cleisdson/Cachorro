@@ -8,10 +8,12 @@ using namespace std;
 
 class Animal{
 	
+	friend ostream & operator<<(ostream & const Animal &);
+	
 public:
 	
 	Animal();
-	Animal(int idade, int energia);
+	Animal(const string &nomeAnimal, int energia, int idade, int selvagem, int estresse, int tam, int pontos);
 	~Animal();
 	Animal(const Animal &);
 	
@@ -27,14 +29,14 @@ protected:
 	
 	double *tabelaPeso;
 	
-	int tam;
+	static string nomeAnimal;
 	int energia;
 	int idade;
 	int selvagem;
 	int estresse;
-	string raca;
-	static string nomeAnimal;
-	
+//	string raca;
+	int tam;
+	int pontos;		//cresce se cuidar bem, decresce se não
 };
 
 #endif // ANIMAL_H

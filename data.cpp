@@ -25,6 +25,20 @@ Data::Data(const Data &dt){
     
 }
 
+ostream &operator<<(ostream &output, const Data &dt){
+	output << "Dia: " << dt.dia << endl;
+	output << "Mes: " << dt.mes << endl;
+	output << "Ano: " << dt.ano << endl;
+	output << "Inicio do Jogo: " << dt.inicio << endl;
+}
+
+const Data& Data::operator=(const Data &dt){
+	this -> dia = dt.dia;
+	this -> mes = dt.mes;
+	this -> ano = dt.ano;
+	this -> inicio = dt.inicio;
+}
+
 ////////////////////////////////////////////////////////////////////////
 
 double tempoTotal(){

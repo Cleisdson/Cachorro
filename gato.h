@@ -10,15 +10,19 @@ using namespace std;
 
 class Gato : public Animal{
     
+//	friend ostream & operator<<(ostream &, const Gato&);
+	
 public:
     
     Gato();
     Gato(int instinto, int vidas);
     ~Gato();
     Gato(const Gato &);
-    
+    const Gatos &operator=()
+	
     void caca();
-    
+    void subirTelhado();
+	
 private:
 
     int instinto;
