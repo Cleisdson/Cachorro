@@ -8,7 +8,7 @@ using namespace std;
 
 class Animal{
 	
-	friend ostream & operator<<(ostream & const Animal &);
+//	friend ostream & operator<<(ostream & const Animal &);
 	
 public:
 	
@@ -17,18 +17,17 @@ public:
 	~Animal();
 	Animal(const Animal &);
 	
-	void domestica();
-	void mostraStatus() const;
-	void brinca();
-	void dorme();
-	static void mudaNomeAnimal();
-	void aloca();
-	void guardaPeso();
-    
+	virtual void domestica() = 0;
+//	virtual void mostraStatus() const;
+	virtual void brinca() = 0;
+	virtual void dorme() = 0;
+/*	static void mudaNomeAnimal();
+	virtual void aloca();
+	virtual void guardaPeso();
+ */   
 protected:
 	
 	double *tabelaPeso;
-	
 	static string nomeAnimal;
 	int energia;
 	int idade;

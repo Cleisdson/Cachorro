@@ -28,11 +28,11 @@ Animal::Animal(const Animal &bicho){
 	tam = bicho.tam;
 	pontos = bicho.pontos;
 }
-
+/*
 ///////////////////////////////////////////////////////////////
 // SOBRECARGA DE OPERADORES
 
-
+/*
 ostream &operator<<(ostream &output, const Animal &bicho){
 	output << "Nome do Animal: " << bicho.nomeAnimal << endl;
 	output << "Energia: " << bicho.energia << endl;
@@ -55,14 +55,14 @@ const Animal& Animal::operator=(const Animal &bicho){
 	this -> pontos = bicho.pontos;
 	
 }
-
+*/
 ///////////////////////////////////////////////////////////////
 void Animal::domestica(){
 	
 	selvagem -= 1;
 	
 }
-
+*/
 ////////////////////////////////////////////////////////////////
 
 void Animal::brinca(){
@@ -135,7 +135,7 @@ void Animal::brinca(){
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////
-
+/*
 void Animal::dorme(){
     if(energia >= 50){
         system("cls");
@@ -204,3 +204,5 @@ void Animal::guardaPeso(){
 	delete [] aux;
 	
 }
+
+*/

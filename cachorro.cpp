@@ -39,10 +39,26 @@ const Cachorro & Cachorro::operator=(const Cachorro &cao){
 		amizade += 5;
 }
 
-
 //////////////////////////////////////////////////////////////////
-
+/*
 void Cachorro::adestramento(){
     selvagem -= 1;          //HERANÇA DA CLASSE ANIMAL
 }
+*/
+void Cachorro::brinca(){
+    
+    cout << "Cachorro esta brincando." << endl;
+    
+}
 
+void Cachorro::domestica(){
+
+    selvagem -= 1;
+    
+}
+
+void Cachorro::dorme(){
+    
+    cout << "Cachorro esta dormindo." endl;
+    
+}

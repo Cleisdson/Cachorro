@@ -22,8 +22,11 @@ public:
 	
     void caca();
     void subirTelhado();
-	
-private:
+	void brinca();
+    void domestica();
+    void dorme();
+    
+protected:
 
     int instinto;
     int vidas;

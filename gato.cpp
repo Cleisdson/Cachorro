@@ -48,3 +48,21 @@ void Gato::subirTelhado(){
 		pontos -= 1;
 	}
 }
+
+void Gato::brinca(){
+    
+    cout << "Gato esta brincando." << endl;
+    
+}
+
+void Gato::domestica(){
+
+    selvagem -= 1;
+    
+}
+
+void Gato::dorme(){
+    
+    cout << "Gato esta dormindo." endl;
+    
+}

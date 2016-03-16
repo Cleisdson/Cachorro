@@ -23,6 +23,9 @@ public:
     void passeio();
     void adestramento();
 	void visitaVet(Data);
+   	void brinca();
+    void domestica();
+    void dorme();
     
 private:
     
