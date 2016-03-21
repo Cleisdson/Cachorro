@@ -1,68 +1,56 @@
 #include"gato.h"
-#include"animal.h"
 
 #include<iostream>
 #include<string>
-#include<cmath>
-#include<ctime>
 
 using namespace std;
 
 Gato::Gato(){
-    
-    this -> instinto = 1;
+}
+
+Gato::Gato(int vidas, const string &nomeGato, int idadeGato, int instinto){
     this -> vidas = 9;
-    
+    this -> nomeGato = "Kitty";
+    this -> idadeGato = 0;
+    this -> instinto = 1;
 }
 
 Gato::~Gato(){
 }
 
-Gato::Gato(const Gato &bichano){
-
-    instinto = bichano.instinto;
-    vidas = bichano.vidas;
-
+Gato::Gato(const Gato &cat){
+    vidas = cat.vidas;
+    nomeGato = cat.nomeGato;
+    idadeGato = cat.idadeGato;
+    instinto = cat.instinto;
 }
 
-//////////////////////////////////////////////////////////////////
+ostream &operator<<(ostream &saida, const Gato &cat){
+    saida << "Nome: " << cat.nomeGato << endl;
+    saida << "Vidas restantes: " << cat.vidas << endl;
 
-void Gato::caca(){
-    
-    instinto += 1;
-    energia -= 10;  //HERANÇA ANIMAL
-    
+    return saida;
+}
+/*
+const Gato& Gato::operator=(const Gato &cat){
+    this -> vidas = cat.vidas;
+    this -> nomeGato = cat.nomeGato;
+}
+*/
+void Gato::atravessaRua(){
+    cout << "Gato atravessou." << endl;
+    vidas -= 1;
 }
 
-void Gato::subirTelhado(){
-	
-	srand(time(0))
-	
-	int chance;
-	
-	chance = rand() % 10 + 1;
-	
-	if(chance % 2 == 0){
-		vidas -= 1;
-		cout << nomeAnimal << " tem mais " << vidas << " vidas." << endl;
-		pontos -= 1;
-	}
+void Gato::som(){
+    cout << "Gato esta miando." << endl;
 }
 
 void Gato::brinca(){
-    
     cout << "Gato esta brincando." << endl;
-    
-}
-
-void Gato::domestica(){
-
-    selvagem -= 1;
-    
 }
 
 void Gato::dorme(){
-    
-    cout << "Gato esta dormindo." endl;
-    
+    cout << "Gato esta dormindo." << endl;
 }
+

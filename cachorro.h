@@ -9,31 +9,26 @@
 using namespace std;
 
 class Cachorro : public Animal{
-    
-//	friend ostream &operator<<(ostream &, const Cachorro &);
-	
+
 public:
 
     Cachorro();
-    Cachorro(int faro, int amizade, int confianca);
+    Cachorro(int faro, int amizade, const string &nomeCachorro, int idadeCachorro);
     ~Cachorro();
     Cachorro(const Cachorro &);
-	const Cachorro &operator=(const Cachorro &);
-	
-    void passeio();
-    void adestramento();
-	void visitaVet(Data);
-   	void brinca();
-    void domestica();
-    void dorme();
-    
-private:
-    
+
+    virtual void som();
+    virtual void brinca();
+    virtual void dorme();
+    virtual string status();
+
+protected:
+
+    static string nomeCachorro;
+    int idadeCachorro;
     int faro;
     int amizade;
-	int confianca;
-    Data visitaVet;
-	
 };
 
-#endif //CACHORRO_H
+#endif // CACHORRO_H
+

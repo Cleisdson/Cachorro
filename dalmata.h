@@ -1,35 +1,29 @@
 #ifndef DALMATA_H
 #define DALMATA_H
 
-#include"animal.h"
+#include"cachorro.h"
 
 #include<iostream>
 #include<string>
 
+using namespace std;
+
 class Dalmata : public Cachorro{
-		
-	friend ostream & operator<<(ostream &, const Dalmata &);
-	
+
 public:
 
     Dalmata();
-    Dalmata(int tam, bool doente);
+    Dalmata(int tam);
     ~Dalmata();
     Dalmata(const Dalmata &);
-    
-	
+
     void aloca();
     void idadeMais();
-	void saude();
-    void checkup();
-    
+
 protected:
 
     int tam;
-    bool doente;
-    
     int *chanceDoenca;
-        
-}
 
-#endif //DALMATA_H
+};
+#endif // DALMATA_H

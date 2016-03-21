@@ -9,14 +9,14 @@ using namespace std;
 class Data{
 
 	friend ostream & operator<<(ostream &, const Data &);
-    
+
 public:
 
     Data();
     Data(int dia, int mes, int ano, double inicio);
     ~Data();
     Data(const Data &);
-    
+
     double tempoTotal();
 
 private:
@@ -24,9 +24,9 @@ private:
     int dia;
     int mes;
     int ano;
-    double inicio;  //INICIO DA EXECUÃ‡ÃƒO
-    double fim;     //TEMPO DE EXECUÃ‡ÃƒO ATUAL
-    
+    double inicio;  //INICIO DA EXECUÇÃO
+    double fim;     //TEMPO DE EXECUÇÃO ATUAL
+
 };
 
 #endif //DATA_H

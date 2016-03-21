@@ -2,36 +2,27 @@
 #include"cachorro.h"
 #include"gato.h"
 #include"data.h"
-#include"filhote.h"
 
-#include<iostream>
-#include<string.h>
-#include<vector>
+#include <iostream>
+#include <string>
+#include <vector>
 
 using namespace std;
 
-int main(int argc, char **argv)
-{
-	
-    vector<int> 
-    
-	int op;
-	bool flag = true;
-	
-cout << "0 - Encerrar" << endl;
-cout << "1 - Brincar" << endl;
-cout << "2 - Dormir" << endl;
-cout << "3 - Mudar nome do animal" << endl;
-cin >> op;
+int main(int argc, char **argv){
 
-	switch(op){
-		
-		case 0:
-			
-		
-	}
-	
-	
-	
-	
+    vector <Animal*> animais;
+    Cachorro c;
+    Gato g;
+
+    animais.push_back(&c);
+    animais.push_back(&g);
+
+    animais[0] -> som();
+
+    animais[0] -> brinca();
+
+    animais[0] -> dorme();
+
+return 0;
 }
