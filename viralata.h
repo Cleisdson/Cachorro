@@ -17,6 +17,12 @@ public:
     ~Viralata();
     Viralata(const Viralata &);
 
+    virtual void som();
+    virtual void brinca();
+    virtual void dorme();
+    virtual void caracteristicas();
+    virtual void fazerExames();
+
     void treino();
 
 protected:

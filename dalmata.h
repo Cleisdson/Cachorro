@@ -13,17 +13,25 @@ class Dalmata : public Cachorro{
 public:
 
     Dalmata();
-    Dalmata(int tam);
+    Dalmata(int pintas);
     ~Dalmata();
     Dalmata(const Dalmata &);
 
-    void aloca();
-    void idadeMais();
+    virtual void som();
+    virtual void brinca();
+    virtual void dorme();
+    virtual void caracteristicas();
+    virtual void fazerExames();
+
+ //   void aloca();
+ //   void idadeMais();
 
 protected:
 
+    int pintas;
+/*
     int tam;
     int *chanceDoenca;
-
+*/
 };
 #endif // DALMATA_H

@@ -15,6 +15,12 @@ public:
     ~Gatoderua();
     Gatoderua(const Gatoderua &);
 
+	virtual void som();
+    virtual void brinca();
+    virtual void dorme();
+    virtual void caracteristicas();
+    virtual void fazerExames();
+
     void fazCarinho();
 
 protected:

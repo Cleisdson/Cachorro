@@ -5,19 +5,22 @@
 
 using namespace std;
 
-Dalmata::Dalmata(int tam){
-    this -> tam = 1;
+Dalmata::Dalmata(){
+}
+
+Dalmata::Dalmata(int pintas){
+    this -> pintas = 10;
 }
 
 Dalmata::~Dalmata(){
-    delete [] chanceDoenca;
+//    delete [] chanceDoenca;
 }
 
 Dalmata::Dalmata(const Dalmata &dal){
-    tam = dal.tam;
+    pintas = dal.pintas;
 }
-
-void Dalmata::aloca(/*int tam*/){
+/*
+void Dalmata::aloca(int tam){
     chanceDoenca = new int[tam];
     chanceDoenca[tam] = 1;
 }
@@ -40,4 +43,26 @@ void Dalmata::idadeMais(){
 	chanceDoenca[tam-1] = chanceDoenca[tam-2] + 1;
 
 	delete [] aux;
+}
+*/
+
+void Dalmata::som(){
+    cout << "Dalmata esta latindo." << endl;
+}
+
+void Dalmata::brinca(){
+    cout << "Dalmata esta brincando." << endl;
+}
+
+void Dalmata::dorme(){
+    cout << "Dalmata esta dormindo." << endl;
+}
+
+void Dalmata::caracteristicas(){
+    cout << "Cachorro Dalmata" << endl;
+}
+
+void Dalmata::fazerExames(){
+    if(pesoIdade[idade]*5 > saude)
+        estadoSaude = false;
 }

@@ -19,3 +19,23 @@ Siames::Siames(const Siames &si){
 void Siames::cacaRato(){
     habilidade += 1;
 }
+
+void Siames::som(){
+    cout << "Siames esta latindo." << endl;
+}
+
+void Siames::brinca(){
+    cout << "Siames esta brincando." << endl;
+}
+
+void Siames::dorme(){
+    cout << "Siames esta dormindo." << endl;
+}
+
+void Siames::caracteristicas(){
+    cout << "Gato Siames." << endl;
+}
+
+void Siames::fazerExames(){
+
+}

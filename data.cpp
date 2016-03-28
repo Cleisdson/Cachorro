@@ -9,7 +9,7 @@ Data::Data(){
     this -> mes = 0;
     this -> ano = 0;
     this -> inicio = 0;
-    this -> fim = 10;   //FIM RECEBER¡ VALOR ATUAL DO TEMPO DE EXECU«√O DO CODIGO
+    this -> fim = 10;   //FIM RECEBER√Å VALOR ATUAL DO TEMPO DE EXECU√á√ÉO DO CODIGO
 
 }
 
@@ -32,17 +32,8 @@ ostream &operator<<(ostream &saida, const Data &dt){
 	saida << "Inicio do Jogo: " << dt.inicio << endl;
 }
 
-const Data& Data::operator=(const Data &dt){
-	this -> dia = dt.dia;
-	this -> mes = dt.mes;
-	this -> ano = dt.ano;
-	this -> inicio = dt.inicio;
-}
-
-////////////////////////////////////////////////////////////////////////
-
 double tempoTotal(){
 
-    return fim - inicio;
+//    return fim - inicio;
 
 }

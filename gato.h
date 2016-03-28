@@ -12,26 +12,33 @@ class Gato : public Animal{
 
     friend ostream & operator<<(ostream &, const Gato&);
 
-
 public:
+/*
+    Gato operator = (Gato cat);
+    Gato operator + (Gato cat);
+
+
+*/
+
+
 
     Gato();
-    Gato(int vidas, const string &nomeGato, int idadeGato, int instinto);
+    Gato(int vidas, int instinto);
     ~Gato();
     Gato(const Gato &);
 
-    void atravessaRua();
     virtual void som();
     virtual void brinca();
     virtual void dorme();
+    virtual void caracteristicas();
+    virtual void fazerExames();
 
-    void print();
-//    Gato operator<<(Gato cat);
+    void atravessaRua();
+
+//	friend ostream& operator<<(ostream& saida, const Gato &cat);
 
 protected:
 
-    string nomeGato;
-    int idadeGato;
     int vidas;
     int instinto;
 
