@@ -13,21 +13,26 @@ class Siames : public Gato{
 public:
 
     Siames();
-    Siames(int habilidade);
+    Siames(int destreza);
     ~Siames();
     Siames(const Siames &);
 
 	virtual void som();
     virtual void brinca();
+    virtual void come();
     virtual void dorme();
-    virtual void caracteristicas();
+    virtual void acorda();
+    virtual void status();
     virtual void fazerExames();
+    
+    virtual void atravessaRua();
+	virtual void contaVidas();
 
-    void cacaRato();
+    void sobeTelhado();
 
 protected:
 
-    int habilidade;
+    int destreza;
 
 };
 

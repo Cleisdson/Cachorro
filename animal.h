@@ -11,14 +11,16 @@ class Animal{
 public:
 
     Animal();
-    Animal(int tam, int idade, const string &nomeAnimal, int saude, bool estadoSaude);
+    Animal(int tam, int idade, const string &nomeAnimal, int energia, bool estadoSaude, bool acordado, bool fome);
     virtual ~Animal();
     Animal(const Animal &);
 
     virtual void som() = 0;
     virtual void brinca() = 0;
+    virtual void come() = 0;
     virtual void dorme() = 0;
-    virtual void caracteristicas() = 0;
+    virtual void acorda() = 0;
+    virtual void status() = 0;
     virtual void fazerExames() = 0;
 
     void pesoMais();
@@ -31,8 +33,12 @@ protected:
     int idade;
     double *pesoIdade;
 	string nomeAnimal;
-    int saude;
+    int energia;
 	bool estadoSaude;
+	bool acordado;
+	bool fome;
+
+
 };
 
 #endif // ANIMAL_H

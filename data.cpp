@@ -9,7 +9,7 @@ Data::Data(){
     this -> mes = 0;
     this -> ano = 0;
     this -> inicio = 0;
-    this -> fim = 10;   //FIM RECEBERÁ VALOR ATUAL DO TEMPO DE EXECUÇÃO DO CODIGO
+    this -> fim = 10;   //FIM RECEBERA� VALOR ATUAL DO TEMPO DE EXECUCAO DO CODIGO
 
 }
 

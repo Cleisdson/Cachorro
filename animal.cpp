@@ -8,12 +8,14 @@ using namespace std;
 Animal::Animal(){
 }
 
-Animal::Animal(int tam, int idade, const string &nomeAnimal, int saude, bool estadoSaude){
+Animal::Animal(int tam, int idade, const string &nomeAnimal, int energia, bool estadoSaude, bool acordado, bool fome){
     this -> tam = 1;
     this -> idade = 1;
     this -> nomeAnimal = "Chiforinfola";
-    this -> saude = 5;
+    this -> energia = 100;
     this -> estadoSaude = true;
+	this -> acordado = true;
+	this -> fome = false;
 }
 
 Animal::~Animal(){
@@ -25,9 +27,10 @@ Animal::Animal(const Animal &bicho){
     tam = bicho.tam;
     idade = bicho.idade;
     nomeAnimal = bicho.nomeAnimal;
-    saude = bicho.saude;
+    energia = bicho.energia;
     estadoSaude = bicho.estadoSaude;
-
+	acordado = bicho.acordado;
+	fome = bicho.fome;
 }
 
 void Animal::aloca(int tam){
@@ -42,14 +45,14 @@ void Animal::anoMais(){
 void Animal::pesoMais(){
 
     double peso;
-    
+
     double *aux = new double[tam];
 
         for(int i = 0; i < tam; i++){
             aux[i] = pesoIdade[i];
         }
 
-        delete [] pesoIdade; 
+        delete [] pesoIdade;
 
     pesoIdade = new double[++tam];
 
@@ -58,7 +61,7 @@ void Animal::pesoMais(){
 
     cout << "Novo peso do animal: ";
     cin >> peso;
-    
+
 	pesoIdade[tam-1] = peso;
 
 	delete [] aux;
