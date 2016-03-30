@@ -27,8 +27,8 @@ public:
     virtual void status();
     virtual void fazerExames();
 
-    virtual void atravessaRua();
-    virtual void contaVidas();
+    virtual void atravessaRua() = 0;
+    virtual void contaVidas() = 0;
 
 protected:
 
