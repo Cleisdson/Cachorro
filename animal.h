@@ -20,9 +20,11 @@ public:
     virtual void come() = 0;
     virtual void dorme() = 0;
     virtual void acorda() = 0;
-    virtual void status() = 0;
+    
+    virtual void nome() = 0;
     virtual void fazerExames() = 0;
-
+    virtual void raca() = 0;
+	
     void pesoMais();
     void aloca(int);
     void anoMais();

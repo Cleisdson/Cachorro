@@ -16,18 +16,13 @@ public:
     Siames(int destreza);
     ~Siames();
     Siames(const Siames &);
-
-	virtual void som();
-    virtual void brinca();
-    virtual void come();
-    virtual void dorme();
-    virtual void acorda();
-    virtual void status();
-    virtual void fazerExames();
+	
+	virtual void fazerExames();
+    virtual void raca();
+    virtual void nome();
     
     virtual void atravessaRua();
-	virtual void contaVidas();
-
+    
     void sobeTelhado();
 
 protected:

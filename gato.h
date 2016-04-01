@@ -10,7 +10,7 @@ using namespace std;
 
 class Gato : public Animal{
 
-    friend ostream & operator<<(ostream &, const Gato&);
+//    friend ostream & operator<<(ostream &, const Gato&);
 
 public:
 
@@ -24,11 +24,12 @@ public:
     virtual void come();
     virtual void dorme();
     virtual void acorda();
-    virtual void status();
+    
+ 	virtual void nome();
     virtual void fazerExames();
+    virtual void raca();
 
     virtual void atravessaRua() = 0;
-    virtual void contaVidas() = 0;
 
 protected:
 

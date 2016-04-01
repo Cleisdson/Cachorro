@@ -22,47 +22,6 @@ Siames::Siames(const Siames &si){
     destreza = si.destreza;
 }
 
-void Siames::som(){
-    cout << " faz miau, miau." << endl;
-}
-
-void Siames::brinca(){
-    cout << " esta brincando." << endl;
-}
-
-void Siames::come(){
-    if(fome != true)
-        cout << "Gato esta cheio." << endl;
-    else{
-        cout << "Gato esta comendo." << endl;
-        fome = false;
-    }
-}
-
-
-void Siames::dorme(){
-    if(acordado == false)
-        cout << "Gato ja esta dormindo." << endl;
-    else{
-        cout << "Gato dormiu." << endl;
-        acordado = false;
-    }
-}
-
-void Siames::acorda(){
-    if(acordado == true)
-        cout << "Gato ja esta acordado." << endl;
-    else{
-        cout << "Gato acordou." << endl;
-        acordado = true;
-    }
-}
-
-
-void Siames::status(){
-    cout << "Gato Siames." << endl;
-}
-
 void Siames::fazerExames(){
 
     int chance;
@@ -82,13 +41,21 @@ void Siames::fazerExames(){
 
 }
 
+void Siames::raca(){
+	cout << "Raca: Siames." << endl;
+}
+
+void Siames::nome(){
+	cout << "Nome: Felix." << endl;
+}
+
 void Siames::atravessaRua(){
 
     srand(time(0));
 
     int chance;
 
-    cout << "Gato vai tentar atravessar a rua." << endl;
+    cout << "Gato vai tentar atravessar a rua..." << endl;
 
     chance = rand() % 10 + 1;
 
@@ -100,10 +67,6 @@ void Siames::atravessaRua(){
         cout << "Gato atravessou." << endl;
 }
 
-void Siames::contaVidas(){
-	cout << "Vidas restantes: " << vidas;	
-}
-
 //MÉTODO EXCLUSIVO DE GATO SIAMES
 
 void Siames::sobeTelhado(){
@@ -111,6 +74,8 @@ void Siames::sobeTelhado(){
 	srand(time(0));
 	
 	int chance;
+	
+	cout << "Gato esta tentando subir no telhado..." << endl;
 	
 	chance = rand() % 50 + 1;
 	

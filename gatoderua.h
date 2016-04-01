@@ -11,26 +11,21 @@ class Gatoderua : public Gato{
 public:
 
     Gatoderua();
-    Gatoderua(int habilidade);
+    Gatoderua(int carinho);
     ~Gatoderua();
     Gatoderua(const Gatoderua &);
 
-	virtual void som();
-    virtual void brinca();
-    virtual void come();
-    virtual void dorme();
-    virtual void acorda();
-    virtual void status();
     virtual void fazerExames();
-    
+    virtual void raca();
+	virtual void nome();
+	    
     virtual void atravessaRua();
-	virtual void contaVidas();
 
-    void cacaRato();
+    void fuga();
 
 protected:
 
-    int habilidade;
+    int carinho;
 
 };
 

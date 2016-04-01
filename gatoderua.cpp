@@ -11,56 +11,15 @@ using namespace std;
 Gatoderua::Gatoderua(){
 }
 
-Gatoderua::Gatoderua(int habilidade){
-    this -> habilidade = 10;
+Gatoderua::Gatoderua(int carinho){
+    this -> carinho = 10;
 }
 
 Gatoderua::~Gatoderua(){
 }
 
 Gatoderua::Gatoderua(const Gatoderua &rua){
-    habilidade = rua.habilidade;
-}
-
-void Gatoderua::som(){
-    cout << " faz miau, miau." << endl;
-}
-
-void Gatoderua::brinca(){
-    cout << " esta brincando." << endl;
-}
-
-void Gatoderua::come(){
-    if(fome != true)
-        cout << "Gato esta cheio." << endl;
-    else{
-        cout << "Gato esta comendo." << endl;
-        fome = false;
-    }
-}
-
-
-void Gatoderua::dorme(){
-    if(acordado == false)
-        cout << "Gato ja esta dormindo." << endl;
-    else{
-        cout << "Gato dormiu." << endl;
-        acordado = false;
-    }
-}
-
-void Gatoderua::acorda(){
-    if(acordado == true)
-        cout << "Gato ja esta acordado." << endl;
-    else{
-        cout << "Gato acordou." << endl;
-        acordado = true;
-    }
-}
-
-
-void Gatoderua::status(){
-    cout << "Gato de Rua." << endl;
+    carinho = rua.carinho;
 }
 
 void Gatoderua::fazerExames(){
@@ -81,45 +40,38 @@ void Gatoderua::fazerExames(){
 	}
 }
 
-void Gatoderua::atravessaRua(){
-
-    srand(time(0));
-
-    int chance;
-
-    cout << "Gato vai tentar atravessar a rua." << endl;
-
-    chance = rand() % 10 + 1;
-
-    if(chance%2 == 0){
-        cout << "Gato foi atropelado." << endl;
-        vidas -= 1;
-    }
-    else
-        cout << "Gato atravessou." << endl;
+void Gatoderua::raca(){
+	
+	cout <<  "Raca: Gato de rua." << endl;
+	
 }
 
-void Gatoderua::contaVidas(){
-	cout << "Vidas restantes: " << vidas;	
+void Gatoderua::nome(){
+	
+	cout << "Nome: Manda Chuva." << endl;
+	
+}
+
+void Gatoderua::atravessaRua(){
 }
 
 //MÉTODO EXCLUSIVO DE GATO DE RUA
 
-void Gatoderua::cacaRato(){
+void Gatoderua::fuga(){
 
     srand(time(0));
 
     int chance;
 
-    cout << "Gato viu um rato." << endl;
+    cout << "Gato foi pra rua..." << endl;
 
     chance = rand() % 50 + 1;
 
-    if(chance >= 1 && chance <= habilidade){
-        cout << "Gato pegou o rato." << endl;
-        habilidade += 1;
+    if(chance >= 1 && chance <= carinho){
+        cout << "Gato nao fugiu." << endl;
+        carinho += 1;
     }
     else
-        cout << "Gato nao conseguiu pegar o rato." << endl;
+        cout << "Gato fugiu." << endl;
 
 }
